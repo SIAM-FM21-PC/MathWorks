@@ -1,4 +1,4 @@
-% Example: Equal Weighted Porfolio Strategy
+%% Model and Simulator Initialization 
 
 % Initialize Model Parameters
 T = 250;
@@ -17,6 +17,8 @@ s0 = 100*ones(d,1);
 % Initialize Simulation Environment
 model_params = struct('mu',mu,'M',M,'c',c,'eta',eta);
 sim_obj = MarketSimulator(T,s0,model_params);
+
+%% Visualization of a Single Simulation for a Strategy
 
 % Run strategy on environment
 sim_obj = example_strategy_2(sim_obj); % proportional weight strategy
@@ -49,5 +51,20 @@ clf();
 plot(1:T,sim_obj.R_hist-1);
 title('Portfolio Cumulative Growth')
 
+
+%% Computing the Target Objective for a Strategy
+
+nsims = 500;
+lambda = 0.25;
+cumret_array = zeros(nsims,1);
+
+for k=1:nsims
+    % Store each simulation's result in array
+    sim_obj = example_strategy_2(sim_obj,lambda);
+    cumret_array(k) = sim_obj.R_hist(end);
+end
+
+
+loss_value = mean(cumret_array) - 0.5*lambda*var(cumret_array);
 
 
