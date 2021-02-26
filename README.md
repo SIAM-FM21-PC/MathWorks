@@ -44,9 +44,9 @@ At the end of the competition, each team shall submit their code and report to t
 <p>
 function simObj = test_strategy(simObj, lambda) </br>
     
-   &nbsp; if nargin<2
-   &nbsp; &nbsp;    lambda = 0.5;
-   &nbsp; end
+   &nbsp; if nargin<2 </br>
+   &nbsp; &nbsp;    lambda = 0.5; </br>
+   &nbsp; end </br>
    &nbsp; simObj.reset(); % reset simulation environment </br>
    &nbsp; for i=1:simObj.T </br>
    &nbsp; &nbsp;    w = get_strategy_weights(lambda,...) % your strategy should return the weights</br>
