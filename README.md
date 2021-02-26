@@ -40,7 +40,7 @@ The winning team shall receive $400, and teams in second, third, and fourth plac
 
 The programming challenge shall consist of optimizing a portfolio of stocks by constructing a trading strategy which uses historical stock prices. You shall use the ![market simulator](MarketSimulator.m) to generate the stock price history with market impact. The specification of the problem together with the modeling and documentation requirements are provided ![here](SIAM_FM_21_Programming_Challenge.pdf).  See ![run_strategy](run_strategy.m) for details of how to initialize and update the simulator using an example strategy and examples of how to plot the results. You should replace the example strategy with your own implementation. Note that the values of the market simulator parameters in the run_strategy.m file have been preset by the programming challenge committee but you are free to (and should) change them.
 
-At the end of the competition, each team shall submit their code and report to the programming challenge committee by the March 31 deadline. The team must provide an additional test function, in a file test_strategy.m, which shall take as an argument a market simulator object, use the optimal set of weights (found during training) and return the updated market simulator object as follows:
+At the end of the competition, each team shall submit their code and report to the programming challenge committee by the March 31 deadline. The team must provide an additional test function, in a file test_strategy.m, which shall take as arguments a market simulator object and the risk aversion parameter, lambda, uses the optimal set of weights (found during training) and returns the updated market simulator object as follows:
 <p>
 function simObj = test_strategy(simObj, lambda) </br>
     
@@ -53,7 +53,7 @@ function simObj = test_strategy(simObj, lambda) </br>
    &nbsp; &nbsp;    simObj.step(w);</br>
 end</br>
   
-It is important to clarify that the test_strategy function should not perform any optimization. Note also that the program challenge committee shall modify the parameters of the market simulator for testing purposes and run each team’s test function with several new market simulator objects and calculate the utilty function from your returned market simulator object. Each team shall be ranked by their aggregate utility function values across various test cases and assigned up to 40% of the overall competition score. Further details of where to submit your team solution shall be added here later.
+It is important to clarify that the test_strategy function should not perform any optimization. Note also that the program challenge committee shall modify the parameters of the market simulator and risk aversion parameter for testing purposes and run each team’s test function with several new market simulator objects and calculate the utilty function from your returned market simulator object. Each team shall be ranked by their aggregate utility function values across various test cases and assigned up to 40% of the overall competition score. Further details of where to submit your team solution shall be added here later.
 
 # Registration 
 
