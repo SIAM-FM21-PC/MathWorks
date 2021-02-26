@@ -42,10 +42,14 @@ The programming challenge shall consist of optimizing a portfolio of stocks by c
 
 At the end of the competition, each team shall submit their code and report to the programming challenge committee by the March 31 deadline. The team must provide an additional test function, in a file test_strategy.m, which shall take as an argument a market simulator object, use the optimal set of weights (found during training) and return the updated market simulator object as follows:
 <p>
-function simObj = test_strategy(simObj) </br>
+function simObj = test_strategy(simObj, lambda) </br>
+    
+    &nbsp;&nbsp;&nbsp if nargin<2
+     &nbsp;&nbsp;&nbsp;&nbsp    lambda = 0.5;
+    &nbsp;&nbsp;&nbsp end
     &nbsp;&nbsp;&nbsp simObj.reset(); % reset simulation environment </br>
     &nbsp;&nbsp;&nbsp for i=1:simObj.T </br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp   w = get_strategy_weights(...) % your strategy should return the weights</br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp   w = get_strategy_weights(lambda,...) % your strategy should return the weights</br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp   simObj.step(w);</br>
 end</br>
   
