@@ -44,13 +44,13 @@ At the end of the competition, each team shall submit their code and report to t
 <p>
 function simObj = test_strategy(simObj, lambda) </br>
     
-    &nbsp;&nbsp;&nbsp if nargin<2
-     &nbsp;&nbsp;&nbsp;&nbsp    lambda = 0.5;
-    &nbsp;&nbsp;&nbsp end
-    &nbsp;&nbsp;&nbsp simObj.reset(); % reset simulation environment </br>
-    &nbsp;&nbsp;&nbsp for i=1:simObj.T </br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp   w = get_strategy_weights(lambda,...) % your strategy should return the weights</br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp   simObj.step(w);</br>
+   if nargin<2
+      lambda = 0.5;
+   end
+   simObj.reset(); % reset simulation environment </br>
+   for i=1:simObj.T </br>
+      w = get_strategy_weights(lambda,...) % your strategy should return the weights</br>
+      simObj.step(w);</br>
 end</br>
   
 It is important to clarify that the test_strategy function should not perform any optimization. Note also that the program challenge committee shall modify the parameters of the market simulator for testing purposes and run each team’s test function with several new market simulator objects and calculate the utilty function from your returned market simulator object. Each team shall be ranked by their aggregate utility function values across various test cases and assigned up to 40% of the overall competition score. Further details of where to submit your team solution shall be added here later.
