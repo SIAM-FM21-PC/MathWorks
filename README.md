@@ -44,7 +44,7 @@ At the end of the competition, each team shall submit their code and report to t
 <p>
 function simObj = test_strategy(simObj, lambda) </br>
     
-   <t> if nargin<2
+   &nbsp; if nargin<2
       lambda = 0.5;
    end
    simObj.reset(); % reset simulation environment </br>
