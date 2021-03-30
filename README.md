@@ -32,8 +32,8 @@ The winning team shall receive $400, and teams in second, third, and fourth plac
 
 - 11:00am EST, January 25: Q&A webinar with the SIAM FM21 programming challenge committee (details sent via Slack). 
 - 11:59pm EST, February 28: Team registration deadline closes.
-- 11:59pm EST, March 31: Submission deadline.
-- 5:00pm EST, April 16: Selection of finalist teams. 
+- 11:59pm EST, April 14: Submission deadline (Revised) .
+- 5:00pm EST, April 30: Selection of finalist teams. 
 - June 1-4: Award Ceremony at SIAM FM21 (date and time TBA).
 
 # Programming Challenge Instructions
